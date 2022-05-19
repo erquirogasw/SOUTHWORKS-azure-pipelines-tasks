@@ -2,6 +2,7 @@ import taskLibrary = require('azure-pipelines-task-lib/task');
 import gitClient = require('@octokit/rest');
 import path = require('path');
 import fs = require('fs');
+import { throws } from 'assert';
 
 const clientWithAuth = new gitClient({
     auth: "token "+ taskLibrary.getInput('userToken'),
@@ -25,6 +26,8 @@ async function run() {
     })
     .catch(err => {
         console.log(err);
+        throw new Error(err);
+        
     });
 }
 
