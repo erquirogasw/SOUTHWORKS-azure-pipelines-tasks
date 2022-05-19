@@ -9,14 +9,18 @@ const clientWithAuth = new gitClient({
 });
 
 async function run() {
-    var files = getFilesFromDir(taskLibrary.getInput('bodyFilePath'), '.' + taskLibrary.getInput('extension'), taskLibrary.getBoolInput('getSubFolders'))
-    var message = combineMessageBody(files);
-    var repo = taskLibrary.getInput('repository').split('/');
+    //var files = getFilesFromDir(taskLibrary.getInput('bodyFilePath'), '.' + taskLibrary.getInput('extension'), taskLibrary.getBoolInput('getSubFolders'))
+    //var message = combineMessageBody(files);
+    var message = "Hello test";
+    //var repo = taskLibrary.getInput('repository').split('/');
+    var repoAux = "erquirogasw/SOUTHWORKS-azure-pipelines-tasks";
+    var repo = repoAux.split('/');
 
     const comment: gitClient.IssuesCreateCommentParams = {
         owner: repo[0],
         repo: repo[1],
-        number: parseInt(taskLibrary.getInput('prNumber')),
+        //number: parseInt(taskLibrary.getInput('prNumber')),
+        number: 3,
         body: "\r\n" + message + "\r\n"
     };
 
@@ -25,6 +29,7 @@ async function run() {
     })
     .catch(err => {
         console.log(err);
+        taskLibrary.setResult(taskLibrary.TaskResult.Failed, 'Build Failed: No data available.');
     });
 }
 
