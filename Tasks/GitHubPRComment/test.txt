@@ -1,1 +1,1 @@
-Test remove previous comments.
+Test to delete the previous comment.
