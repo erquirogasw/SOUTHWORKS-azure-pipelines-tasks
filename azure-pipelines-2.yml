@@ -9,9 +9,9 @@ jobs:
       - task: github-pr-comment@0
         inputs:
           userToken: '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'
-          repository: '$(Build.Repository.Name)'
+          repository: 'SOUTHWORKS-azure-pipelines-tasks'
           prNumber: 10
           extension: '.txt'
-          bodyFilePath: 'Tasks/GitHubPRComment'
+          bodyFilePath: 'Tasks/GitHubPRComment/'
           getSubFolders: true
           keepCommentHistory: false
