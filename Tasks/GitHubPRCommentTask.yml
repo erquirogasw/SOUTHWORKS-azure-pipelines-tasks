@@ -1,6 +1,6 @@
 # Starter pipeline
 - task: github-pr-comment@0
-   inputs:
+  inputs:
     userToken: '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'
     repository: 'erquirogasw/SOUTHWORKS-azure-pipelines-tasks'
     prNumber: 10
