@@ -1,0 +1,9 @@
+# Starter pipeline
+- task: github-pr-comment@0
+  inputs:
+    userToken: '$(GitHubCommentApiKey)'
+    repository: '$(Build.Repository.Name)'
+    prNumber: '$(System.PullRequest.PullRequestNumber)'
+    extension: 'txt'
+    getSubFolders: true
+    keepCommentHistory: false
