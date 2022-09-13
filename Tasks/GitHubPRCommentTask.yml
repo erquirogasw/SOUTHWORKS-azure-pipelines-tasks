@@ -6,7 +6,6 @@ parameters:
 
 jobs:
 - job: build
-  variables:
   steps:
   - task: github-pr-comment@0
     inputs:
