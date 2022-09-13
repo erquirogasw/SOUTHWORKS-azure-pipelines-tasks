@@ -1,0 +1,8 @@
+- task: github-pr-comment@0
+  inputs:
+    userToken: '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'
+    repository: '$(Build.Repository.Name)'
+    prNumber: '$(System.PullRequest.PullRequestNumber)'
+    bodyFilePath: 'Tasks/GitHubPRComment/'
+    extension: 'txt'
+    getSubFolders: true
