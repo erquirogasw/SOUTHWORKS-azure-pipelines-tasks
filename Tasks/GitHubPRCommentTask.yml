@@ -3,7 +3,7 @@ jobs:
   steps:
   - task: github-pr-comment@0
     inputs:
-      userToken: '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'
+      userToken: '${githubToken}'
       repository: 'erquirogasw/SOUTHWORKS-azure-pipelines-tasks'
       prNumber: 10
       extension: 'txt'
