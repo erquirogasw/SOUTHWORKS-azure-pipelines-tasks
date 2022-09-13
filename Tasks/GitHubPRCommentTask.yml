@@ -7,9 +7,6 @@ parameters:
 jobs:
 - job: build
   variables:
-    configuration: debug
-    arch: x86
-    ${{ insert }}: ${{ parameters.additionalVariables }}
   steps:
   - task: github-pr-comment@0
     inputs:
