@@ -12,6 +12,6 @@ jobs:
           repository: 'SOUTHWORKS-azure-pipelines-tasks'
           prNumber: 10
           extension: 'txt'
-          bodyFilePath: 'Tasks/GitHubPRComment'
+          bodyFilePath: 'Tasks/GitHubPRComment/'
           getSubFolders: true
           keepCommentHistory: false
