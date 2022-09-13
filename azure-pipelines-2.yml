@@ -12,3 +12,6 @@ jobs:
           repository: '$(Build.Repository.Name)'
           prNumber: '$(System.PullRequest.PullRequestNumber)'
           extension: 'txt'
+          bodyFilePath: 'Tasks/GitHubPRComment/'
+          getSubFolders: true
+          keepCommentHistory: false
