@@ -1,9 +1,3 @@
-# Default values
-parameters:
-- name: 'additionalVariables'
-  type: object
-  default: {}
-
 jobs:
 - job: build
   steps:
