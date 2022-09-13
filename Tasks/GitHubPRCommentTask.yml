@@ -1,9 +1,21 @@
-# Starter pipeline
-- task: github-pr-comment@0
-  inputs:
-    userToken: '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'
-    repository: 'erquirogasw/SOUTHWORKS-azure-pipelines-tasks'
-    prNumber: 10
-    extension: 'txt'
-    getSubFolders: true
-    keepCommentHistory: false
+# Default values
+parameters:
+- name: 'additionalVariables'
+  type: object
+  default: {}
+
+jobs:
+- job: build
+  variables:
+    configuration: debug
+    arch: x86
+    ${{ insert }}: ${{ parameters.additionalVariables }}
+  steps:
+  - task: github-pr-comment@0
+    inputs:
+      userToken: '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'
+      repository: 'erquirogasw/SOUTHWORKS-azure-pipelines-tasks'
+      prNumber: 10
+      extension: 'txt'
+      getSubFolders: true
+      keepCommentHistory: false
