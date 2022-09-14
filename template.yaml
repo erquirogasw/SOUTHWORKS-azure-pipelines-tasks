@@ -9,11 +9,8 @@ jobs:
       - task: github-pr-comment@0
         inputs:
           userToken: '$(githubToken)'
-          repository: '$(Build.Repository.Name)'
-          prNumber: 14
           bodyFilePath: 'Tasks/GitHubPRComment/'
-          extension: 'txt'
-          getSubFolders: false
+          getSubFolders: true
           keepCommentHistory: false
 
 pool:
