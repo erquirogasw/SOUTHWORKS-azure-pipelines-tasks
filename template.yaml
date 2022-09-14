@@ -8,7 +8,7 @@ jobs:
       steps: 
       - task: github-pr-comment@0
         inputs:
-          userToken: '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'
+          userToken: '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'
           repository: '$(Build.Repository.Name)'
           prNumber: 14
           bodyFilePath: 'Tasks/GitHubPRComment/'
