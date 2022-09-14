@@ -6,7 +6,7 @@ variables:
 jobs:
     - job: "TestJob"
       steps: 
-      - task: GitHubPR Comment
+      - task: github-pr-comment@0
         inputs:
           userToken: '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'
           repository: 'SOUTHWORKS-azure-pipelines-tasks'
