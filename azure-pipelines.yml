@@ -1,6 +1,0 @@
-- task: github-pr-comment@0
-  inputs:
-    userToken: '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'
-    bodyFilePath: Tasks/GitHubPRComment/
-    getSubFolders: true
-    keepCommentHistory: false
