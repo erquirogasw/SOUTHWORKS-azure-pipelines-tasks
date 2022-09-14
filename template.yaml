@@ -9,7 +9,7 @@ jobs:
       - task: github-pr-comment@0
         inputs:
           userToken: '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'
-          repository: 'SOUTHWORKS-azure-pipelines-tasks'
+          repository: '$(Build.Repository.Name)'
           prNumber: 14
           bodyFilePath: 'Tasks/GitHubPRComment/'
           extension: 'txt'
