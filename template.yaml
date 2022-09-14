@@ -1,0 +1,20 @@
+# This YAML runs all the CI pipelines Dot Net, python, JS in parallel
+variables:
+  BuildConfiguration: "Debug"
+  BuildPlatform: "Any CPU"
+
+jobs:
+    - job: "TestJob"
+      steps: 
+      - task: GitHubPR Comment
+        inputs:
+          userToken: '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'
+          repository: 'SOUTHWORKS-azure-pipelines-tasks'
+          prNumber: 14
+          bodyFilePath: 'Tasks/GitHubPRComment/'
+          extension: 'txt'
+          getSubFolders: false
+          keepCommentHistory: false
+
+pool:
+    vmImage: "windows-2022"
