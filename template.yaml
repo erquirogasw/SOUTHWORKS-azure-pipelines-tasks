@@ -10,7 +10,7 @@ jobs:
         inputs:
           userToken: '$(githubToken)'
           bodyFilePath: 'Tasks/GitHubPRComment/'
-          prNumber: 14
+          prNumber: 15
           getSubFolders: true
           keepCommentHistory: false
 
