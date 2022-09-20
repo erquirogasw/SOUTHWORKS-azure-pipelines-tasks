@@ -1,17 +1,17 @@
 {
-    "id": "f5fbab81-da68-4a17-883f-3d2d6368b216",
+    "id": "f5fbab81-da68-4a18-883f-3d2d6368b218",
     "name": "github-pr-comment",
-    "friendlyName": "GitHub PR Comment",
+    "friendlyName": "GitHub PR Comment Test",
     "description": "Publish a comment on a GitHub pull request.",
     "helpMarkDown": "",
     "category": "Utility",
-    "author": "SOUTHWORKS",
+    "author": "EmilianoQuiroga",
     "version": {
         "Major": 0,
         "Minor": 2,
         "Patch": 5
     },
-    "instanceNameFormat": "GitHub PR Comment",
+    "instanceNameFormat": "GitHub PR Comment Test",
     "inputs": [
         {
             "name": "userToken",

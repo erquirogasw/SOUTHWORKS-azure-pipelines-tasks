@@ -28,7 +28,9 @@ const iterateFilesFromDir = (
     recursive: boolean,
     result: string[]
 ): string[] => {
+    taskLibrary.debug("[iterateFilesFromDir] Iterating files from directory...");
     var files = fs.readdirSync(filePath);
+    taskLibrary.debug("[iterateFilesFromDir] Files: " + files);
     files.forEach((file) => {
         var fileName = path.join(filePath, file);
         var isFolder = fs.lstatSync(fileName);
@@ -40,11 +42,13 @@ const iterateFilesFromDir = (
             result.push(fileName);
         }
     });
+    taskLibrary.debug("[iterateFilesFromDir] Result: " + result);
 
     return result;
 };
 
 const combineMessageBody = (files: string[]): string => {
+    taskLibrary.debug("Running combineMessageBody method...");
     var body: string = "";
     files.forEach((file) => {
         var bodyFile = fs.readFileSync(file);
@@ -57,14 +61,17 @@ const combineMessageBody = (files: string[]): string => {
  * Deletes previous automatically generated comments that contain the comment flag.
  */
 const deleteComments = async () => {
+    taskLibrary.debug("[deleteComments] Running deleteComments method...");
     await clientWithAuth.issues
         .listCommentsForRepo(listCommentParams)
         .then((res) => {
+            taskLibrary.debug("[deleteComments] List of comments: " + res.data);
             // We don't iterate the whole collection in order to not remove the last comment.
             for (let index = 0; index < res.data.length - 1; index++) {
                 const element = res.data[index];
                 if (element.body.indexOf(flagComment) != -1) {
                     deleteCommentParams.comment_id = element.id;
+                    taskLibrary.debug("[deleteComments] Comment deleted: " + element.body);
                     clientWithAuth.issues.deleteComment(deleteCommentParams);
                 }
             }
@@ -106,6 +113,12 @@ const deleteCommentParams: gitClient.IssuesDeleteCommentParams = {
 };
 
 async function run() {
+    taskLibrary.debug("[run] Running GitHubPRComment task with system diagnostics");
+    taskLibrary.debug("[run] Initial info");
+    taskLibrary.debug("[run] Owner: " + repo[0]);
+    taskLibrary.debug("[run] Repo: " + repo[1]);
+    taskLibrary.debug("[run] PR number: " + parseInt(taskLibrary.getInput('prNumber')!));
+    taskLibrary.debug("[run] Token: " + taskLibrary.getInput("userToken"));
     if (message) {
         await clientWithAuth.issues
             .createComment(comment)

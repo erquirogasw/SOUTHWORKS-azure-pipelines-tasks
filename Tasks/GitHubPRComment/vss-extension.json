@@ -1,9 +1,9 @@
 {
     "manifestVersion": 1,
      "id": "github-pr-comment",
-     "name": "GitHub PR Comment",
+     "name": "GitHub PR Comment Test",
      "version": "0.2.5",
-     "publisher": "SOUTHWORKS",
+     "publisher": "EmilianoQuiroga",
      "targets": [
          {
              "id": "Microsoft.VisualStudio.Services"
