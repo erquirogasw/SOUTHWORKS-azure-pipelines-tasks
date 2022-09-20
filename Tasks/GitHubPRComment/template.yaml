@@ -6,7 +6,7 @@ variables:
 jobs:
     - job: "TestJob"
       steps: 
-      - task: github-pr-comment-test@0
+      - task: github-pr-comment@0
         inputs:
           userToken: '$(githubToken)'
           bodyFilePath: 'Tasks/GitHubPRComment/'
