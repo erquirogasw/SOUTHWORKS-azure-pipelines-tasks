@@ -1,0 +1,18 @@
+# This YAML runs all the CI pipelines Dot Net, python, JS in parallel
+variables:
+  BuildConfiguration: "Debug"
+  BuildPlatform: "Any CPU"
+
+jobs:
+    - job: "TestJob"
+      steps: 
+      - task: github-pr-comment@0
+        inputs:
+          userToken: '$(githubToken)'
+          bodyFilePath: 'Tasks/GitHubPRComment/'
+          prNumber: 14
+          getSubFolders: true
+          keepCommentHistory: false
+
+pool:
+    vmImage: "windows-2022"
