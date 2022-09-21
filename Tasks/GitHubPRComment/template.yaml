@@ -7,8 +7,6 @@ jobs:
     - job: "TestJob"
       steps: 
       - task: EmilianoQuiroga.github-pr-comment.custom-publish-comment-task.github-pr-comment@0
-        env:
-          githubToken: $(SecretOne)
         inputs:
           userToken: '$(githubToken)'
           bodyFilePath: 'Tasks/GitHubPRComment/'
